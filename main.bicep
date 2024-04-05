@@ -7,3 +7,11 @@ resource appserviceplan 'Microsoft.Web/serverfarms@2023-01-01' = {
     name: 'S1'
   }
 }
+
+resource webapp 'Microsoft.Web/sites@2023-01-01' = {
+  name: 'ntmswebapp44'
+  location: location
+  properties: {
+    serverFarmId: appserviceplan.id
+  }
+}
