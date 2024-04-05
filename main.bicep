@@ -22,4 +22,4 @@ resource webapp 'Microsoft.Web/sites@2023-01-01' = {
   }
 }
 
-
+output webname string = '${webappname}${uniqueString(resourceGroup().id)}'
